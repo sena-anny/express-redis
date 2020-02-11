@@ -16,7 +16,7 @@ export default (app:Express.Application) => {
   //画面表示用ルート・ハンドラー
   app.get('/', (req, res, next) => {
     if (req.session) {
-      const data: { count: number } = { count: req.session.count }
+      const data: { count?: number } = { count: req.session.count }
       res.render('index.ejs', data )
       return
     }
